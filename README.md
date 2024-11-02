@@ -57,5 +57,5 @@ php artisan key:generate
 ```
 
 
-Acessar o projeto
+Acessar a documentação da API (Swagger)
 [http://localhost:8989](http://localhost:8989)
