@@ -3,11 +3,6 @@
 
 ### Passo a passo
 
-
-Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
-```sh
-cp -rf setup-docker-laravel/* app-laravel/
-```
 ```sh
 cd app-laravel/
 ```
@@ -31,9 +26,6 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=root
 
-CACHE_DRIVER=redis
-QUEUE_CONNECTION=redis
-SESSION_DRIVER=redis
 
 REDIS_HOST=redis
 REDIS_PASSWORD=null
