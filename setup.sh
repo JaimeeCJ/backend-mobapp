@@ -11,7 +11,7 @@ mkdir -p storage/logs
 # Configura permissões para o storage e bootstrap/cache
 echo "Configurando permissões..."
 chmod -R 775 storage bootstrap/cache
-chown -R nginx:nginx storage bootstrap/cache 
+chown -R www-data:www-data storage bootstrap/cache 
 
 # Limpa e configura o cache do Laravel
 echo "Limpando e configurando o cache do Laravel..."

@@ -4,7 +4,7 @@
 ### Passo a passo
 
 ```sh
-cd app-laravel/
+cd backend-mobapp/
 ```
 
 
