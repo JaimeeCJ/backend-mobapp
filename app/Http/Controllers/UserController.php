@@ -19,7 +19,7 @@ class UserController extends Controller
     public function index(){
         //$users = User::all();
         //return UserResource::collection($users) 
-        return "abroba";
+        return "abrobaaa";
     }
 }
 
