@@ -33,12 +33,12 @@ class Product extends Model
     // Relacionamento com a tabela 'tab_category'
     public function category()
     {
-        return $this->belongsTo(TabCategory::class, 'fk_tab_category', 'id_category');
+        return $this->belongsTo(Category::class, 'fk_tab_category', 'id_category');
     }
 
     // Relacionamento com a tabela 'tab_promotion'
     public function promotion()
     {
-        return $this->belongsTo(TabPromotion::class, 'fk_tab_promotion', 'id_promotion');
+        return $this->belongsTo(Promotion::class, 'fk_tab_promotion', 'id_promotion');
     }
 }

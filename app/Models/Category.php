@@ -28,12 +28,12 @@ class Category extends Model
     // Relacionamento com a tabela 'tab_product'
     public function products()
     {
-        return $this->hasMany(TabProduct::class, 'fk_tab_category', 'id_category');
+        return $this->hasMany(Product::class, 'fk_tab_category', 'id_category');
     }
 
     // Relacionamento com a tabela 'tab_promotion'
     public function promotions()
     {
-        return $this->hasMany(TabPromotion::class, 'fk_tab_category', 'id_category');
+        return $this->hasMany(Promotion::class, 'fk_tab_category', 'id_category');
     }
 }

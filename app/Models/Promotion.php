@@ -33,6 +33,6 @@ class Promotion extends Model
     // Definir o relacionamento com a tabela 'tab_category'
     public function category()
     {
-        return $this->belongsTo(TabCategory::class, 'fk_tab_category', 'id_category');
+        return $this->belongsTo(Category::class, 'fk_tab_category', 'id_category');
     }
 }

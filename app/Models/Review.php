@@ -31,12 +31,12 @@ class Review extends Model
     // Relacionamento com a tabela 'tab_user'
     public function user()
     {
-        return $this->belongsTo(TabUser::class, 'fk_tab_user', 'id_user');
+        return $this->belongsTo(User::class, 'fk_tab_user', 'id_user');
     }
 
     // Relacionamento com a tabela 'tab_product'
     public function product()
     {
-        return $this->belongsTo(TabProduct::class, 'fk_tab_product', 'id_product');
+        return $this->belongsTo(Product::class, 'fk_tab_product', 'id_product');
     }
 }
