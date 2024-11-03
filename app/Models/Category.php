@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'tab_user';
-    protected $primaryKey = 'id_user';
+    protected $table = 'tab_category';
+
     // Campos que podem ser preenchidos em operações de criação ou atualização em massa
     protected $fillable = [
-        'name_user',
-        'email_user',
-        'password_user',
+        'name_category',
         'user_stamp',
     ];
 
@@ -27,9 +25,15 @@ class User extends Model
     // Desabilitar timestamps automáticos do Laravel
     public $timestamps = false;
 
-    // Relacionamento com a tabela 'tab_review'
-    public function reviews()
+    // Relacionamento com a tabela 'tab_product'
+    public function products()
     {
-        return $this->hasMany(Review::class, 'fk_tab_user', 'id_user');
+        return $this->hasMany(Product::class, 'fk_tab_category', 'id_category');
+    }
+
+    // Relacionamento com a tabela 'tab_promotion'
+    public function promotions()
+    {
+        return $this->hasMany(Promotion::class, 'fk_tab_category', 'id_category');
     }
 }
