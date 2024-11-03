@@ -12,7 +12,7 @@ mkdir -p storage/logs
 echo "Configurando permissões..."
 chmod -R 775 storage bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache 
-
+# a
 # Limpa e configura o cache do Laravel
 echo "Limpando e configurando o cache do Laravel..."
 php artisan cache:clear
