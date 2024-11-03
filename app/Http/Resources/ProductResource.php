@@ -23,7 +23,22 @@ class ProductResource extends JsonResource
             'price_product'=> $this->price_product,
             'img_product'=> base64_encode($this->img_product),
             'dt_stamp'=> $this->dt_stamp,
+            'category' => $this->whenLoaded('category', function () {
+                return [
+                    'id_category' => $this->category->id_category, 
+                    'name_category' => $this->category->name_category, 
+                ];
+            }),
+            'promotion' => $this->whenLoaded('promotion', function () {
+                return [
+                    'id_promotion' => $this->promotion->id_promotion, 
+                    'dt_start' => $this->promotion->dt_start,
+                    'dt_end' => $this->promotion->dt_end, 
+                    'num_percentage' => $this->promotion->num_percentage, 
+                ];
+            }),
         ];
 
     }
+    
 }

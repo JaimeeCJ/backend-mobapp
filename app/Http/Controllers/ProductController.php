@@ -9,10 +9,16 @@ class ProductController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/products",
+     *     path="/api/products/{qty}",
      *     tags={"Popular"},
      *     summary="Todos os produtos",
      *     description="Produtos Populares.",
+     *      @OA\Parameter(
+     *         name="qty",
+     *         in="path",
+     *         required=false,
+     *         description="Quantidade de itens a serem retornados"
+     *     ),
      *     @OA\Response(
      *         response=200,
      *         description="Resposta bem-sucedida com a lista de Produtos Populares.",     
@@ -24,9 +30,9 @@ class ProductController extends Controller
      * )
      */
 
-    public function index()
+    public function index($num_register)
     {
-        $products = Product::take(4)->get(); 
+        $products = Product::take($num_register)->get(); 
         return ProductResource::collection($products); 
     }
 
