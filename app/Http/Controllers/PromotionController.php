@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\PromotionResource;
-use App\Models\Promotion;
+use App\Http\Resources\ProductResource;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PromotionController extends Controller
@@ -17,7 +17,7 @@ class PromotionController extends Controller
      *     @OA\Parameter(
      *         name="qty",
      *         in="path",
-     *         required=true,
+     *         required=false,
      *         description="Quantidade de itens a serem retornados"
      *     ),
      *     @OA\Response(
@@ -36,8 +36,14 @@ class PromotionController extends Controller
      */
     public function index($num_register)
     { 
-        $promotions = Promotion::with('category')->orderBy('num_percentage', 'desc')->limit($num_register)->get();
-        return PromotionResource::collection($promotions);
+        $products = Product::join('tab_promotion', 'tab_product.fk_tab_promotion', '=', 'tab_promotion.id_promotion')
+            ->with(['category', 'promotion']) 
+            ->orderBy('tab_promotion.num_percentage', 'desc')
+            ->limit($num_register)
+            ->get(['tab_product.*']); 
+        //dd($products->toSql());
+        return ProductResource::collection($products);
     }
+
 
 }
