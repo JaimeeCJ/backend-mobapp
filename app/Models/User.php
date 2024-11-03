@@ -30,6 +30,6 @@ class User extends Model
     // Relacionamento com a tabela 'tab_review'
     public function reviews()
     {
-        return $this->hasMany(TabReview::class, 'fk_tab_user', 'id_user');
+        return $this->hasMany(Review::class, 'fk_tab_user', 'id_user');
     }
 }

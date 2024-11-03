@@ -38,7 +38,7 @@ class UserController extends Controller
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
-     *         required=true,
+     *         required=false,
      *         description="ID do usuário que deseja recuperar."
      *     ),
      *     @OA\Response(

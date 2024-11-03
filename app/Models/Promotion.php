@@ -21,10 +21,10 @@ class Promotion extends Model
     ];
 
     // Campos que devem ser tratados como datas
-    protected $dates = [
-        'dt_start',
-        'dt_end',
-        'dt_stamp'
+    protected $casts = [
+        'dt_start' => 'datetime',
+        'dt_end' => 'datetime',
+        'dt_stamp' => 'datetime',
     ];
 
     // Desabilitar timestamps automáticos do Laravel
@@ -33,6 +33,6 @@ class Promotion extends Model
     // Definir o relacionamento com a tabela 'tab_category'
     public function category()
     {
-        return $this->belongsTo(TabCategory::class, 'fk_tab_category', 'id_category');
+        return $this->belongsTo(Category::class, 'fk_tab_category', 'id_category');
     }
 }
