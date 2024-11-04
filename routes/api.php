@@ -10,7 +10,7 @@ Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{id}', [UserController::class, 'show']); 
 Route::get('/products/{qty}', [ProductController::class, 'index']);
 Route::get('/promotion/{qty}', [PromotionController::class, 'index']); 
-Route::get('/products/search/{query}', [SearchController::class, 'search']);
+Route::get('/products/search/{id}', [SearchController::class, 'search']);
 
 
 Route::get('/', function (){

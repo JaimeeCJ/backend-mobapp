@@ -12,7 +12,7 @@ class SearchController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/products/search/{query}",
+     *     path="/api/products/search/{id}",
      *     tags={"Search"},
      *     summary="Buscar produtos por nome, descrição ou ID",
      *     description="Retorna uma lista de produtos que correspondem ao termo de pesquisa.",
@@ -39,13 +39,9 @@ class SearchController extends Controller
      *     )
      * )
      */
-    public function search(Request $request, $query)
+    public function search(Request $request, $id)
     {
-        $products = Product::where('name_product', 'like', '%' . $query . '%')
-                           ->orWhere('description_product', 'like', '%' . $query . '%')
-                           ->orWhere('id_product', $query) 
-                           ->get();
-
+        $products = Product::where('id_product', $id)->get();
         if ($products->count() > 0) {
             return ProductResource::collection($products); 
         } else {
