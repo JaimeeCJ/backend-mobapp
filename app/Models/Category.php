@@ -9,6 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
+    // Nome da tabela no banco de dados
     protected $table = 'tab_category';
 
     // Campos que podem ser preenchidos em operações de criação ou atualização em massa
