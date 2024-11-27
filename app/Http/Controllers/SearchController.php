@@ -14,7 +14,7 @@ class SearchController extends Controller
      * @OA\Get(
      *     path="/api/products/search/{id}",
      *     tags={"Search"},
-     *     summary="Buscar produtos por nome, descrição ou ID",
+     *     summary="Buscar produtos por ID",
      *     description="Retorna uma lista de produtos que correspondem ao termo de pesquisa.",
      *     @OA\Parameter(
      *         name="query",
